@@ -59,7 +59,7 @@ jobs:
         set -e -x
         cd src/main/native/packr
         cmake -B build .
-        cmake --build build --config Release
+        cmake --build build --config Release -v
         cmake -DCMAKE_TOOLCHAIN_FILE=arm64-linux-gcc.cmake -B build-arm64 .
         cmake --build build-arm64 --config Release
     - name: build jar
